@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Portafolio</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&amp;display=swap">
+<style>
+:root{color-scheme:light dark;--bg:#F6F4EF;--bg2:#ECE9E1;--ink:#111;--mute:#55534d;--line:#CFCBBF;--card1:#FFFFFF;--card2:#F4F2EC;--hi:rgba(255,255,255,.9);--sh:rgba(40,30,0,.14);--link:#1d5a96;--y1:#FFE066;--y2:#F5C518;--yb:#C79A00;--yt:#2a2000;--bar1:#F7F6F2;--bar2:#E3E0D6;--g1:#F3F1EB;--g2:#DDD9CD}
+@media (prefers-color-scheme:dark){:root{--bg:#1E1D1A;--bg2:#171614;--ink:#F1EFE8;--mute:#A9A69B;--line:#3A3832;--card1:#2D2C28;--card2:#252420;--hi:rgba(255,255,255,.08);--sh:rgba(0,0,0,.5);--link:#8fc0f0;--bar1:#34332E;--bar2:#262521;--g1:#3A3934;--g2:#2A2925}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Nimbus Sans","Nimbus Sans L","Helvetica Neue",Helvetica,Arial,sans-serif;line-height:1.55}
+h1,h2,h3,.logo,.btn{font-family:Montserrat,"Helvetica Neue",Helvetica,sans-serif}
+a{color:var(--link)}
+.bar{position:sticky;top:0;z-index:5;display:flex;align-items:center;justify-content:space-between;padding:10px 48px;background:linear-gradient(var(--bar1),var(--bar2));border-bottom:1px solid var(--line);box-shadow:0 1px 0 var(--hi) inset,0 2px 6px var(--sh)}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;color:var(--ink);text-decoration:none}
+.mark{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;color:var(--yt);background:linear-gradient(var(--y1),var(--y2));border:1px solid var(--yb);box-shadow:0 1px 0 rgba(255,255,255,.7) inset,0 1px 3px var(--sh)}
+.nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;box-sizing:border-box;padding:0 20px;border-radius:10px;font-size:14px;font-weight:600;text-decoration:none;color:var(--ink);background:linear-gradient(var(--g1),var(--g2));border:1px solid var(--line);box-shadow:0 1px 0 var(--hi) inset,0 1px 2px var(--sh);cursor:pointer}
+.btn:hover{filter:brightness(1.04)}
+.btn.nav-i{min-height:40px;padding:0 14px;background:transparent;border-color:transparent;box-shadow:none}
+.btn.nav-i:hover{background:linear-gradient(var(--g1),var(--g2));border-color:var(--line)}
+.btn.main{color:var(--yt);background:linear-gradient(var(--y1),var(--y2));border:1px solid var(--yb);box-shadow:0 1px 0 rgba(255,255,255,.7) inset,0 2px 4px var(--sh)}
+.sec{max-width:1120px;margin:0 auto;padding:88px 48px 0}
+.eyebrow{font-family:Montserrat,sans-serif;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin:0 0 8px}
+h2{font-size:34px;line-height:1.15;margin:0 0 12px;font-weight:700}
+.lead{font-size:18px;color:var(--mute);max-width:640px;margin:0 0 32px}
+.card{background:linear-gradient(var(--card1),var(--card2));border:1px solid var(--line);border-radius:14px;box-shadow:0 1px 0 var(--hi) inset,0 2px 8px var(--sh);padding:24px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.chip{display:inline-block;padding:4px 12px;border-radius:99px;font-size:13px;background:var(--bg2);border:1px solid var(--line);box-shadow:0 1px 2px var(--sh) inset;margin:0 6px 8px 0}
+.ph{border-radius:10px;border:1px solid var(--line);background:linear-gradient(135deg,var(--g1),var(--g2));display:flex;align-items:center;justify-content:center;color:var(--mute);font-size:13px;text-align:center;padding:8px;box-shadow:0 1px 3px var(--sh) inset}
+h3{font-size:18px;margin:0 0 8px}
+p{margin:0 0 12px}
+.hero{display:flex;gap:64px;align-items:center;flex-wrap:wrap;padding-top:72px}
+.stack{position:relative;width:340px;flex:none;margin:12px 20px}
+.stack:before,.stack:after{content:"";position:absolute;inset:0;border-radius:6px;background:var(--card1);border:1px solid var(--line);box-shadow:0 2px 8px var(--sh)}
+.stack:before{transform:rotate(-5deg)}.stack:after{transform:rotate(3deg)}
+.polaroid{position:relative;z-index:1;background:var(--card1);border:1px solid var(--line);border-radius:6px;padding:14px 14px 18px;box-shadow:0 3px 12px var(--sh)}
+.cap{font-size:13px;color:var(--mute);margin:12px 0 0;font-style:italic}
+.num{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:Montserrat,sans-serif;font-weight:700;margin-bottom:12px;background:linear-gradient(var(--g1),var(--g2));border:1px solid var(--line);box-shadow:0 1px 0 var(--hi) inset,0 1px 2px var(--sh)}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.foot{margin-top:96px;padding:40px 48px;background:linear-gradient(var(--bar1),var(--bar2));border-top:1px solid var(--line);box-shadow:0 1px 0 var(--hi) inset}
+.foot-in{max-width:1120px;margin:0 auto;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+
+.split{display:flex;gap:32px;align-items:center;flex-wrap:wrap}
+.pyr{width:320px;flex:none;display:flex;flex-direction:column;align-items:center;gap:8px;margin:0 auto}
+.lvl{box-sizing:border-box;min-height:44px;border-radius:10px;font-family:Montserrat,sans-serif;font-weight:600;font-size:14px;color:var(--ink);cursor:pointer;background:linear-gradient(var(--g1),var(--g2));border:1px solid var(--line);box-shadow:0 1px 0 var(--hi) inset,0 1px 2px var(--sh)}
+.lvl:hover{filter:brightness(1.04)}
+.lvl.on,.step.on{color:var(--yt);background:linear-gradient(var(--y1),var(--y2));border-color:var(--yb);box-shadow:0 1px 0 rgba(255,255,255,.7) inset,0 2px 4px var(--sh)}
+.w0{width:46%}.w1{width:58%}.w2{width:70%}.w3{width:84%}.w4{width:100%}
+.imgs{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.flow{display:flex;align-items:center;gap:8px}.flow svg{flex:none}
+.step{box-sizing:border-box;min-height:56px;padding:8px 12px;flex:1 1 0;min-width:0;border-radius:10px;font-family:Montserrat,sans-serif;font-weight:600;font-size:15px;color:var(--ink);cursor:pointer;background:linear-gradient(var(--g1),var(--g2));border:1px solid var(--line);box-shadow:0 1px 0 var(--hi) inset,0 1px 2px var(--sh)}
+.cyc{position:relative;padding:40px 28px 0}
+.eval{position:absolute;top:0;left:0;right:0;height:68.75px;pointer-events:none;text-align:center;font-size:13px;color:var(--mute);line-height:26px}
+.loop{position:absolute;inset:0;box-sizing:border-box;border:1.5px solid var(--mute);border-radius:14px;-webkit-mask:linear-gradient(#000 0 0) top/100% 54px no-repeat,linear-gradient(#000 0 0) left/28px 100% no-repeat,linear-gradient(#000 0 0) right/28px 100% no-repeat;mask:linear-gradient(#000 0 0) top/100% 54px no-repeat,linear-gradient(#000 0 0) left/28px 100% no-repeat,linear-gradient(#000 0 0) right/28px 100% no-repeat}
+.eval svg{position:absolute;left:17px;bottom:-5.25px}
+.flow{position:relative;z-index:1;align-items:flex-start;min-height:300px}
+.col{flex:1 1 0;min-width:0;display:flex;flex-direction:column}
+.step:hover{filter:brightness(1.04)}
+.col .step{height:56px;flex:none;width:100%;cursor:pointer;display:flex;align-items:center;justify-content:center;text-align:center;line-height:1.2;padding:4px 10px}
+.flow>svg{margin-top:21px}
+.bubble{position:relative;margin-top:16px;padding:14px;border-radius:14px;font-size:14px;color:var(--mute);background:linear-gradient(var(--card1),var(--card2));border:1px solid var(--line);box-shadow:0 1px 0 var(--hi) inset,0 2px 8px var(--sh)}
+.bubble:before{content:"";position:absolute;top:-7px;left:50%;margin-left:-6px;width:12px;height:12px;transform:rotate(45deg);background:var(--card1);border-left:1px solid var(--line);border-top:1px solid var(--line)}
+.pager{display:flex;flex-direction:column;align-items:center;gap:12px;margin-top:20px}
+.dots{display:flex;gap:6px}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--line);box-shadow:0 1px 1px var(--sh) inset}.dot.on{background:#2f7cc0}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 1px 2px var(--sh)}
+.arr{width:44px;height:36px;border:0;color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center;background:linear-gradient(var(--g1),var(--g2));box-shadow:0 1px 0 var(--hi) inset}
+.arr+.arr{border-left:1px solid var(--line)}
+.arr:hover{filter:brightness(1.05)}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+.view{overflow:hidden;padding:6px 8px 18px;margin:-6px -8px 0}
+.track{display:flex;transition:transform .35s ease}
+.slide{flex:0 0 100%;display:flex;justify-content:center;padding:16px 8px}
+.pol{width:min(100%,680px);box-sizing:border-box;padding:16px 16px 0;border-radius:6px;background:linear-gradient(var(--card1),var(--card2));border:1px solid var(--line);box-shadow:0 1px 0 var(--hi) inset,0 4px 14px var(--sh)}
+.params{padding:16px 4px 20px}
+.params b{font-family:Montserrat,sans-serif;font-size:15px;display:block;margin-bottom:6px}
+.params span{display:inline-block;font-size:13px;color:var(--mute);margin-right:14px}
+.contact{display:flex;flex-direction:column;gap:10px;margin-top:28px}.crow{display:flex;align-items:center;gap:12px;color:var(--ink);text-decoration:none;font-size:15px}.crow:hover span:last-child{text-decoration:underline}.ci{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;background:linear-gradient(var(--g1),var(--g2));border:1px solid var(--line);box-shadow:0 1px 0 var(--hi) inset,0 1px 2px var(--sh)}
+</style>
+</helmet>
+<div>
+<header class="bar">
+<a class="logo" href="#inicio"><span class="mark">ab</span>[TU NOMBRE]</a>
+<nav class="nav">
+<a class="btn nav-i" href="#ingenieria">Ingeniería</a>
+<a class="btn nav-i" href="#proyectos">Metodología</a>
+<a class="btn nav-i" href="#portafolio">Portafolio</a>
+<a class="btn nav-i" href="#arte">Fotografía</a>
+<a class="btn main" href="#contacto">Contacto</a>
+</nav>
+</header>
+
+<section id="inicio" class="sec hero">
+<div style="flex:1;min-width:300px">
+<p class="eyebrow">Estudiante de Ingeniería en Sistemas de Información</p>
+<h1 style="font-size:56px;line-height:1.05;margin:0 0 20px;font-weight:700">[TU NOMBRE]</h1>
+<p class="lead" style="margin-bottom:28px">[Dos líneas sobre vos: qué estudiás, qué te interesa construir y qué te gusta de la fotografía y el diseño 3D.]</p>
+<div class="row" style="margin-top:0">
+<a class="btn main" href="#portafolio">Ver mis proyectos</a>
+
+</div>
+<div class="contact"><a class="crow" href="mailto:tu@email.com"><span class="ci"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1.5" y="3" width="13" height="10" rx="2"></rect><path d="M2 4.5l6 4.5 6-4.5"></path></svg></span><span>[tu@email.com]</span></a><a class="crow" href="#contacto"><span class="ci"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg></span><span>github.com/[usuario]</span></a><a class="crow" href="#contacto"><span class="ci"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M2 5.5h2.6V14H2zM3.3 1.5a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM6.4 5.5h2.5v1.2c.4-.7 1.3-1.4 2.6-1.4 2.7 0 3.2 1.8 3.2 4V14h-2.6V9.9c0-1 0-2.2-1.4-2.2s-1.6 1.1-1.6 2.2V14H6.4z"></path></svg></span><span>linkedin.com/in/[usuario]</span></a></div>
+</div>
+<div class="stack">
+<div class="polaroid">
+<div class="ph" style="height:340px">[TU FOTO]</div>
+<p class="cap">[Una frase corta que te represente.]</p>
+</div>
+</div>
+</section>
+
+<section id="ingenieria" class="sec">
+<h2>Ingeniería en sistemas</h2>
+<p class="lead">[texto]</p>
+<div class="split">
+<div class="pyr">
+<sc-for list="{{ levels }}" as="l" hint-placeholder-count="5"><button class="{{ l.cls }}" onClick="{{ l.pick }}">{{ l.n }}</button></sc-for>
+</div>
+<div class="card" style="flex:1;min-width:300px;border-radius:22px">
+<div class="imgs"><div class="ph" style="height:120px">[Imagen 1]</div><div class="ph" style="height:120px">[Imagen 2]</div><div class="ph" style="height:120px">[Imagen 3]</div><div class="ph" style="height:120px">[Imagen 4]</div></div>
+<h3>{{ lvName }}</h3><p style="color:var(--mute);margin:0">[texto]</p>
+</div>
+</div>
+</section>
+
+<section id="proyectos" class="sec">
+<h2>Metodología</h2>
+<p class="lead">[texto]</p>
+<div class="cyc"><div class="eval"><div class="loop"></div>Evaluación<svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="var(--mute)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 1l6 5-6 5"></path></svg></div>
+<div class="flow">
+<sc-for list="{{ steps }}" as="st" hint-placeholder-count="4"><div class="col"><button class="{{ st.cls }}" onClick="{{ st.pick }}">{{ st.n }}</button><sc-if value="{{ st.on }}" hint-placeholder-val="{{ true }}"><div class="bubble">{{ st.t }}</div></sc-if></div><sc-if value="{{ st.more }}" hint-placeholder-val="{{ true }}"><svg width="22" height="14" viewBox="0 0 22 14" fill="none" stroke="var(--mute)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 7h19M14 1l6 6-6 6"></path></svg></sc-if></sc-for>
+</div></div>
+</section>
+
+<section id="portafolio" class="sec">
+<h2>Portafolio</h2>
+<p class="lead">Publicaciones y repositorios.</p>
+<div class="view" style="margin:-6px -18px 0;padding:6px 8px 18px"><div class="track" style="{{ pfTrack }}">
+<sc-for list="{{ pfPages }}" as="pg" hint-placeholder-count="2"><div class="slide" style="padding:0 10px;box-sizing:border-box"><div class="grid3" style="width:100%"><sc-for list="{{ pg.items }}" as="p" hint-placeholder-count="3"><div class="card"><div class="ph" style="height:140px;margin-bottom:16px">[Captura]</div><h3>{{ p.n }}</h3><p style="color:var(--mute)">[Qué hace y con qué tecnologías.]</p><span class="chip">{{ p.tag }}</span><div class="row" style="margin-top:8px;justify-content:flex-end"><a class="btn main" href="#portafolio">{{ p.cta }}</a></div></div></sc-for></div></div></sc-for>
+</div></div>
+<div class="pager"><div class="dots"><sc-for list="{{ dots }}" as="d" hint-placeholder-count="3"><span class="{{ d.cls }}"></span></sc-for></div><div class="seg"><button class="arr" aria-label="Proyectos anterior" onClick="{{ pfPrev }}"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3L5 8l5 5"></path></svg></button><button class="arr" aria-label="Proyectos siguiente" onClick="{{ pfNext }}"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"></path></svg></button></div></div>
+</section>
+
+<section id="arte" class="sec">
+<h2>Fotografía</h2>
+<p class="lead">Mis fotos favoritas.</p>
+<div class="view"><div class="track" style="{{ trackStyle }}">
+<sc-for list="{{ photos }}" as="f" hint-placeholder-count="3"><div class="slide"><div class="pol"><div class="ph" style="height:460px">{{ f.n }}</div><div class="params"><b>[Título de la foto]</b><span>[Cámara]</span><span>[Lente] mm</span><span>ƒ/[x]</span><span>1/[x] s</span><span>ISO [x]</span></div></div></div></sc-for>
+</div></div>
+<div class="pager"><div class="dots"><sc-for list="{{ phDots }}" as="d" hint-placeholder-count="3"><span class="{{ d.cls }}"></span></sc-for></div><div class="seg"><button class="arr" aria-label="Foto anterior" onClick="{{ phPrev }}"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3L5 8l5 5"></path></svg></button><button class="arr" aria-label="Foto siguiente" onClick="{{ phNext }}"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"></path></svg></button></div></div>
+</section>
+
+<footer id="contacto" class="foot">
+<div class="foot-in">
+<div><h3 style="margin:0 0 4px">Hablemos</h3><span style="color:var(--mute)">[tu@email.com] · [LinkedIn] · [GitHub]</span></div>
+<div class="row" style="margin:0"><a class="btn main" href="#contacto">Enviar un correo</a></div>
+<div style="width:100%;color:var(--mute);font-size:13px">© 2026 [TU NOMBRE]. Todos los derechos reservados.</div>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":3500}}'>
+class Component extends DCLogic {
+  state = { lv: 4, st: 1, pf: 0, ph: 0 };
+  renderVals() {
+    const s = this.state;
+    const L = ['Sistemas','Gestión','Software','Infraestructura','Ingeniería'];
+    const S = ['Análisis','Diseño','Desarrollo','Implementación y mantenimiento'];
+    const T = ['[texto]','La solución debe funcionar primero en papel, ser coherente, mantenible y apropiada al negocio. Esto se logra aplicando buenas prácticas y patrones de diseño a nivel arquitectura y a nivel objetos.','[texto]','[texto]'];
+    const P = [['[Repositorio 1]','[Tecnología]','Código'],['[Repositorio 2]','[Tecnología]','Código'],['[Publicación 1]','Artículo','Leer'],['[Repositorio 3]','[Tecnología]','Código'],['[Repositorio 4]','[Tecnología]','Código'],['[Publicación 2]','Artículo','Leer']];
+    const pages = 2, ph = 3;
+    return {
+      levels: L.map((n, i) => ({ n, cls: 'lvl w' + i + (i === s.lv ? ' on' : ''), pick: () => this.setState({ lv: i }) })),
+      lvName: L[s.lv],
+      steps: S.map((n, i) => ({ n, on: i === s.st, t: T[i], more: i < S.length - 1, cls: 'step' + (i === s.st ? ' on' : ''), pick: () => this.setState({ st: i }) })),
+      stName: S[s.st],
+      pfPages: [0, 1].map(k => ({ items: P.slice(k * 3, k * 3 + 3).map(([n, tag, cta]) => ({ n, tag, cta })) })),
+      pfTrack: 'transform:translateX(-' + s.pf * 100 + '%)',
+      dots: [0, 1].map(i => ({ cls: 'dot' + (i === s.pf ? ' on' : '') })),
+      pfPrev: () => this.setState({ pf: (s.pf + pages - 1) % pages }),
+      pfNext: () => this.setState({ pf: (s.pf + 1) % pages }),
+      photos: [1, 2, 3].map(i => ({ n: '[Foto ' + i + ']' })),
+      trackStyle: 'transform:translateX(-' + s.ph * 100 + '%)',
+      phDots: [0, 1, 2].map(i => ({ cls: 'dot' + (i === s.ph ? ' on' : '') })),
+      phPrev: () => this.setState({ ph: (s.ph + ph - 1) % ph }),
+      phNext: () => this.setState({ ph: (s.ph + 1) % ph }),
+    };
+  }
+}
+</script>
+</body>
+</html>

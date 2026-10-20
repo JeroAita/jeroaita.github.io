@@ -1,12 +1,12 @@
 import { useState } from 'react'
-import { levels } from '../data/content'
+import { levels, sectionLeads } from '../data/content'
 
 export default function Engineering() {
   const [sel, setSel] = useState(levels.length - 1)
   return (
     <section id="ingenieria" className="sec">
       <h2>Ingeniería en sistemas</h2>
-      <p className="lead">[texto]</p>
+      <p className="lead">{sectionLeads.ingenieria}</p>
       <div className="split">
         <div className="pyr">
           {levels.map((l, i) => (

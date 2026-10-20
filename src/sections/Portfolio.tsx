@@ -9,7 +9,7 @@ export default function Portfolio() {
     <section id="portafolio" className="sec">
       <h2>Portafolio</h2>
       <p className="lead">Publicaciones y repositorios.</p>
-      <Carousel label="Proyectos">
+      <Carousel label="Proyectos" wide>
         {pages.map((page, i) => (
           <div className="grid3" style={{ width: '100%' }} key={i}>
             {page.map((p) => (

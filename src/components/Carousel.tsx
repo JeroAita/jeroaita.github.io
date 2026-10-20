@@ -5,7 +5,7 @@ const Chevron = ({ d }: { d: string }) => (
 )
 
 /** Cada hijo es una "página". Desliza con scroll-snap (táctil nativo) y con las flechas. */
-export default function Carousel({ children, label }: { children: ReactNode; label: string }) {
+export default function Carousel({ children, label, wide }: { children: ReactNode; label: string; wide?: boolean }) {
   const ref = useRef<HTMLDivElement>(null)
   const [index, setIndex] = useState(0)
   const slides = Children.toArray(children)
@@ -23,10 +23,12 @@ export default function Carousel({ children, label }: { children: ReactNode; lab
 
   return (
     <div role="region" aria-roledescription="carrusel" aria-label={label}>
-      <div className="track" ref={ref} onScroll={onScroll}>
-        {slides.map((s, i) => (
-          <div className="slide" key={i} aria-hidden={i !== index}>{s}</div>
-        ))}
+      <div className={wide ? 'view wide' : 'view'}>
+        <div className="track" ref={ref} onScroll={onScroll}>
+          {slides.map((s, i) => (
+            <div className="slide" key={i} aria-hidden={i !== index} inert={i !== index}>{s}</div>
+          ))}
+        </div>
       </div>
       <div className="pager">
         <div className="dots">{slides.map((_, i) => <span key={i} className={i === index ? 'dot on' : 'dot'} />)}</div>
