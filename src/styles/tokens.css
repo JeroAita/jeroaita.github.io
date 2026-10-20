@@ -1,0 +1,16 @@
+:root {
+  color-scheme: light dark;
+  --bg: #F6F4EF; --bg2: #ECE9E1; --ink: #111; --mute: #55534d; --line: #CFCBBF;
+  --card1: #FFFFFF; --card2: #F4F2EC; --hi: rgba(255,255,255,.9); --sh: rgba(40,30,0,.14);
+  --link: #1d5a96; --y1: #FFE066; --y2: #F5C518; --yb: #C79A00; --yt: #2a2000;
+  --bar1: #F7F6F2; --bar2: #E3E0D6; --g1: #F3F1EB; --g2: #DDD9CD;
+  --font-body: "Nimbus Sans", "Nimbus Sans L", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-head: Montserrat, "Helvetica Neue", Helvetica, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1E1D1A; --bg2: #171614; --ink: #F1EFE8; --mute: #A9A69B; --line: #3A3832;
+    --card1: #2D2C28; --card2: #252420; --hi: rgba(255,255,255,.08); --sh: rgba(0,0,0,.5);
+    --link: #8fc0f0; --bar1: #34332E; --bar2: #262521; --g1: #3A3934; --g2: #2A2925;
+  }
+}
