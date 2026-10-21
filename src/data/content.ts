@@ -11,6 +11,7 @@ export const profile = {
 }
 
 export const navItems = [
+  { id: 'inicio', label: 'Sobre mí' },
   { id: 'ingenieria', label: 'Ingeniería' },
   { id: 'metodologia', label: 'Metodología' },
   { id: 'portafolio', label: 'Portafolio' },

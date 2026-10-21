@@ -6,7 +6,7 @@ const Arrow = () => (
 )
 
 export default function Methodology() {
-  const [sel, setSel] = useState(1)
+  const [sel, setSel] = useState(0)
   return (
     <section id="metodologia" className="sec">
       <h2>Metodología</h2>

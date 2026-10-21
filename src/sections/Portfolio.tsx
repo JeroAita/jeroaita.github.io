@@ -18,7 +18,7 @@ export default function Portfolio() {
                 <h3>{p.title}</h3>
                 <p style={{ color: 'var(--mute)' }}>{p.description}</p>
                 <span className="chip">{p.tag}</span>
-                <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: 8 }}>
+                <div className="cta">
                   <a className="btn main" href={p.href}>{p.action}</a>
                 </div>
               </article>

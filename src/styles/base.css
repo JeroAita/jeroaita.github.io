@@ -29,6 +29,9 @@ h3 { font-size: 18px; margin: 0 0 8px; }
 .menu-tg:hover { filter: brightness(1.04); }
 .card { background: linear-gradient(var(--card1), var(--card2)); border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 1px 0 var(--hi) inset, 0 2px 8px var(--sh); padding: 24px; }
 .grid3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+.grid3 .card { display: flex; flex-direction: column; }
+.grid3 .chip { align-self: flex-start; }
+.cta { display: flex; justify-content: flex-end; margin-top: auto; padding-top: 8px; }
 .chip { display: inline-block; padding: 4px 12px; border-radius: 99px; font-size: 13px; background: var(--bg2); border: 1px solid var(--line); box-shadow: 0 1px 2px var(--sh) inset; margin: 0 6px 8px 0; }
 .ph { box-sizing: content-box; border-radius: 10px; border: 1px solid var(--line); background: linear-gradient(135deg, var(--g1), var(--g2)); display: flex; align-items: center; justify-content: center; color: var(--mute); font-size: 13px; text-align: center; padding: 8px; box-shadow: 0 1px 3px var(--sh) inset; }
 
@@ -87,7 +90,8 @@ h3 { font-size: 18px; margin: 0 0 8px; }
 .pyr { width: 320px; flex: none; display: flex; flex-direction: column; align-items: center; gap: 8px; margin: 0 auto; }
 .pyr .btn { min-height: 44px; }
 .w0 { width: 46%; } .w1 { width: 58%; } .w2 { width: 70%; } .w3 { width: 84%; } .w4 { width: 100%; }
-.panel { flex: 1; min-width: 300px; border-radius: 22px; }
+.panel { flex: 1; min-width: 300px; border-radius: 22px; display: grid; overflow: hidden; background: linear-gradient(var(--card1), var(--card2)); box-shadow: 0 2px 8px var(--sh); }
+.panel > .card { grid-area: 1 / 1; margin: 0; border-radius: 22px; transition: transform .35s ease; }
 .imgs { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
 .cyc { position: relative; padding: 40px 28px 0; }
 .eval { position: absolute; top: 0; left: 0; right: 0; height: 68.75px; pointer-events: none; text-align: center; font-size: 13px; color: var(--mute); line-height: 26px; }
