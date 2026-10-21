@@ -37,7 +37,9 @@ export default function Hero() {
       </div>
       <div className="stack">
         <figure className="polaroid">
-          <div className="ph" style={{ height: 340 }}>[Tu foto]</div>
+          {profile.photo.src
+            ? <img className="hero-photo" src={profile.photo.src} alt={profile.photo.alt} />
+            : <div className="ph" style={{ height: 340 }}>[Tu foto]</div>}
           <figcaption className="cap">{profile.caption}</figcaption>
         </figure>
       </div>

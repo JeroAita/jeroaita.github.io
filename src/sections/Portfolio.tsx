@@ -14,12 +14,16 @@ export default function Portfolio() {
           <div className="grid3" style={{ width: '100%' }} key={i}>
             {page.map((p) => (
               <article className="card" key={p.title}>
-                <div className="ph" style={{ height: 140, marginBottom: 16 }}>[Captura]</div>
+                {p.image.src
+                  ? <img className="shot" src={p.image.src} alt={p.image.alt} loading="lazy" />
+                  : <div className="ph" style={{ height: 140, marginBottom: 16 }}>[Captura]</div>}
                 <h3>{p.title}</h3>
                 <p style={{ color: 'var(--mute)' }}>{p.description}</p>
-                <span className="chip">{p.tag}</span>
+                <div className="tags">
+                  {p.tags.map((t) => <span className="chip" key={t}>{t}</span>)}
+                </div>
                 <div className="cta">
-                  <a className="btn main" href={p.href} target="_blank" rel="noopener noreferrer">{p.action}</a>
+                  <a className="btn main" href={p.href} target="_blank" rel="noopener noreferrer">Ver más</a>
                 </div>
               </article>
             ))}

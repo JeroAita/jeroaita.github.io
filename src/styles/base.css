@@ -30,10 +30,17 @@ h3 { font-size: 18px; margin: 0 0 8px; }
 .card { background: linear-gradient(var(--card1), var(--card2)); border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 1px 0 var(--hi) inset, 0 2px 8px var(--sh); padding: 24px; }
 .grid3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
 .grid3 .card { display: flex; flex-direction: column; }
-.grid3 .chip { align-self: flex-start; }
+.grid3 .tags { align-self: flex-start; }
 .cta { display: flex; justify-content: flex-end; margin-top: auto; padding-top: 8px; }
 .chip { display: inline-block; padding: 4px 12px; border-radius: 99px; font-size: 13px; background: var(--bg2); border: 1px solid var(--line); box-shadow: 0 1px 2px var(--sh) inset; margin: 0 6px 8px 0; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.tags .chip { margin: 0; }
 .ph { box-sizing: content-box; border-radius: 10px; border: 1px solid var(--line); background: linear-gradient(135deg, var(--g1), var(--g2)); display: flex; align-items: center; justify-content: center; color: var(--mute); font-size: 13px; text-align: center; padding: 8px; box-shadow: 0 1px 3px var(--sh) inset; }
+/* Las imágenes ocupan la misma caja que el placeholder del mockup (que es content-box:
+   alto declarado + 2×8 de padding + 2×1 de borde), así el swap placeholder → foto
+   real no mueve el layout. */
+.shot { display: block; width: 100%; height: 158px; object-fit: cover; border-radius: 10px; margin-bottom: 16px; }
+.hero-photo { display: block; width: 100%; height: 358px; object-fit: cover; border-radius: 10px; }
 
 /* Carrusel (scroll-snap) */
 .view { overflow: hidden; padding: 6px 8px 18px; margin: -6px -8px 0; }
@@ -94,6 +101,8 @@ h3 { font-size: 18px; margin: 0 0 8px; }
 .panel { flex: 1; min-width: 300px; border-radius: 22px; display: grid; overflow: hidden; background: linear-gradient(var(--card1), var(--card2)); box-shadow: 0 2px 8px var(--sh); }
 .panel > .card { grid-area: 1 / 1; margin: 0; border-radius: 22px; transition: transform .35s ease; }
 .imgs { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+.imgs.one { grid-template-columns: 1fr; }
+.imgs img { display: block; width: 100%; height: 138px; object-fit: cover; border-radius: 10px; }
 .cyc { position: relative; padding: 40px 28px 0; }
 .eval { position: absolute; top: 0; left: 0; right: 0; height: 68.75px; pointer-events: none; text-align: center; font-size: 13px; color: var(--mute); line-height: 26px; }
 .eval svg { position: absolute; left: 17px; bottom: -5.25px; stroke: var(--mute); }
@@ -103,7 +112,7 @@ h3 { font-size: 18px; margin: 0 0 8px; }
 .eval-m { display: none; align-items: center; justify-content: center; gap: 6px; margin-top: 20px; font-size: 13px; color: var(--mute); stroke: var(--mute); }
 .col { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; }
 .step { height: 56px; min-height: 56px; width: 100%; padding: 4px 10px; font-size: 15px; text-align: center; line-height: 1.2; }
-.bubble { position: relative; margin-top: 16px; padding: 14px; border-radius: 14px; font-size: 14px; color: var(--mute); text-align: justify; background: linear-gradient(var(--card1), var(--card2)); border: 1px solid var(--line); box-shadow: 0 1px 0 var(--hi) inset, 0 2px 8px var(--sh); }
+.bubble { position: relative; margin-top: 16px; padding: 14px; border-radius: 14px; font-size: 14px; color: var(--mute); text-align: center; background: linear-gradient(var(--card1), var(--card2)); border: 1px solid var(--line); box-shadow: 0 1px 0 var(--hi) inset, 0 2px 8px var(--sh); }
 .bubble::before { content: ""; position: absolute; top: -7px; left: 50%; margin-left: -6px; width: 12px; height: 12px; transform: rotate(45deg); background: var(--card1); border-left: 1px solid var(--line); border-top: 1px solid var(--line); }
 @media (max-width: 720px) {
   .flow { flex-direction: column; min-height: 0; } .col { width: 100%; } h2 { font-size: 28px; }

@@ -37,7 +37,11 @@ export default function Engineering() {
                   transition: active || exiting.includes(i) ? undefined : 'none',
                 }}
               >
-                <div className="imgs">{[1, 2, 3, 4].map((n) => <div key={n} className="ph" style={{ height: 120 }}>[Imagen {n}]</div>)}</div>
+                <div className={`imgs${l.images.length === 1 ? ' one' : ''}`}>
+                  {l.images.length > 0
+                    ? l.images.map((im, j) => <img key={`${im.src}-${j}`} src={im.src} alt={im.alt} loading="lazy" />)
+                    : [1, 2, 3, 4].map((n) => <div key={n} className="ph" style={{ height: 120 }}>[Imagen {n}]</div>)}
+                </div>
                 <h3>{l.name}</h3>
                 <p style={{ color: 'var(--mute)', margin: 0 }}>{l.text}</p>
               </div>

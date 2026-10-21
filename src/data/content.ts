@@ -1,10 +1,16 @@
 // Todo el contenido vive acá: agregar un proyecto o una foto = agregar un objeto.
 // Los datos de ejemplo se reemplazan por los reales antes de publicar.
+//
+// Las imágenes referencian archivos de `public/images/` (Vite los copia tal cual al build).
+// `src: ''` = sin imagen: se muestra el placeholder. Ver la sección "Imágenes" del README.
+export type ImageRef = { src: string; alt: string }
+
 export const profile = {
   name: 'Jerónimo Aita',
   tagline: 'Analista Funcional | Desarrollador de software | Estudiante de Ingeniería',
   lead: 'Apasionado por los proyectos. Crítico de lo ya construído y explorador de oportunidades de mejora. Me interesa construir software bien diseñado que resuelva problemas de verdad. Cuando no estoy aprendiendo algo nuevo, estoy afuera con mi cámara.',
   caption: '[Código de día, luz de tarde].',
+  photo: { src: '', alt: 'Retrato de Jerónimo Aita' } as ImageRef,
   email: 'jeroaitagm@gmail.com',
   github: 'JeroAita',
   linkedin: 'Jerónimo-Aita-b2625a1b8',
@@ -24,16 +30,36 @@ export const sectionLeads = {
 }
 
 // De arriba hacia abajo, como en la pirámide del mockup.
-export const levels = ['Sistemas', 'Gestión', 'Software', 'Infraestructura', 'Ingeniería'].map((name, i) => ({
-  name,
-  text: [
-    'La integración de los conceptos: Comprender el negocio, modelar procesos, identificar oportunidades de mejora e información útil para la toma de decisiones. Diseñar sistemas que se alineen con los objetivos del negocio y acompañan su evolución.',
-    'La administración de proyectos: Contexto organizacional, planificación de recursos, tiempos y equipos para llevar cada proyecto a buen puerto.',
-    'La lógica: algoritmos y estructura de datos. Desde procesos en RAM y archivos, hasta microservicios interpretados en distintos lenguajes comunicados por APIs y bases de datos. Diseño de aplicaciones mantenibles, probadas y con una arquitectura pensada para crecer.',
-    'La plataforma física o primordial sobre la que viven los sistemas: hardware, sistemas operativos, redes, protocolos, virtualización, computación en la nube.',
-    'La solidez de las bases: ciencias aplicadas al modelado de problemas reales con rigor técnico. Matemática, análisis de señales, estadística, lógica y ciencias de la computación.',
-  ][i],
-}))
+// `images`: 1..N fotos del nivel (en `public/images/ingenieria/`). Vacío = placeholders.
+export type Level = { name: string; text: string; images: ImageRef[] }
+
+export const levels: Level[] = [
+  {
+    name: 'Sistemas',
+    text: 'La integración de los conceptos: Comprender el negocio, modelar procesos, identificar oportunidades de mejora e información útil para la toma de decisiones. Diseñar sistemas que se alineen con los objetivos del negocio y acompañan su evolución.',
+    images: [],
+  },
+  {
+    name: 'Gestión',
+    text: 'La administración de proyectos: Contexto organizacional, planificación de recursos, tiempos y equipos para llevar cada proyecto a buen puerto.',
+    images: [],
+  },
+  {
+    name: 'Software',
+    text: 'La lógica: algoritmos y estructura de datos. Desde procesos en RAM y archivos, hasta microservicios interpretados en distintos lenguajes comunicados por APIs y bases de datos. Diseño de aplicaciones mantenibles, probadas y con una arquitectura pensada para crecer.',
+    images: [],
+  },
+  {
+    name: 'Infraestructura',
+    text: 'La plataforma física o primordial sobre la que viven los sistemas: hardware, sistemas operativos, redes, protocolos, virtualización, computación en la nube.',
+    images: [],
+  },
+  {
+    name: 'Ingeniería',
+    text: 'La solidez de las bases: ciencias aplicadas al modelado de problemas reales con rigor técnico. Matemática, análisis de señales, estadística, lógica y ciencias de la computación.',
+    images: [],
+  },
+]
 
 export const steps = [
   { name: 'Análisis', text: 'Relevar la situación, entrevistar a los stakeholders y comprender el problema. Traducir las necesidades del negocio en especificaciones técnicas: alcance, restricciones y criterios de éxito.' },
@@ -42,14 +68,36 @@ export const steps = [
   { name: 'Implementación y mantenimiento', text: 'Garantizar el servicio llevando el sistema a producción de manera estructurada, con pruebas automáticas y despliegues controlados que permitan la mejora continua.' },
 ]
 
-export type Project = { title: string; tag: string; description: string; href: string; action: 'Código' | 'Leer' }
+export type Project = { title: string; tags: string[]; description: string; href: string; image: ImageRef }
 export const projects: Project[] = [
-  { title: 'Panel de sensores domóticos', tag: 'React', description: 'Dashboard en tiempo real para seguir consumo y temperatura del hogar, con alertas y gráficas históricas.', href: 'https://github.com/anabeltran/domotica-dashboard', action: 'Código' },
-  { title: 'CLI de backups incrementales', tag: 'Go', description: 'Herramienta de línea de comandos que comprime y sincroniza sólo los cambios, con verificación de integridad.', href: 'https://github.com/anabeltran/backup-cli', action: 'Código' },
-  { title: 'Arquitecturas hexagonales en la práctica', tag: 'Artículo', description: 'Comparación de dos aplicaciones reales con y sin puertos y adaptadores, y qué cambió en los tests.', href: 'https://ejemplo.com/articulos/arquitectura-hexagonal', action: 'Leer' },
-  { title: 'API de turnos para consultorios', tag: 'Node.js', description: 'API REST con autenticación, calendario y notificaciones por correo; desplegada con Docker Compose.', href: 'https://github.com/anabeltran/turnos-api', action: 'Código' },
-  { title: 'Buscador de fotos por similitud', tag: 'TypeScript', description: 'Indexa metadatos y embeddings para encontrar fotos parecidas; incluye pipeline de miniaturas.', href: 'https://github.com/anabeltran/photo-search', action: 'Código' },
-  { title: 'Estimación de esfuerzo con datos históricos', tag: 'Artículo', description: 'Cómo convertimos el registro de tareas terminadas en estimaciones más honestas para el equipo.', href: 'https://ejemplo.com/articulos/estimacion', action: 'Leer' },
+  { title: 'SIS - Sistema Integrado de Socios',
+    tags: ['Django REST', 'React', 'MySQL'],
+    description: 'Base de sistema ERP para la gestión de socios, cuotas, eventos y staff de club social y deportivo. Demostración de desarrollo backend API REST + frontend React.', href: 'https://github.com/JeroAita/SIS-Sistema-Integrado-de-Socios',
+    image: { src: '', alt: 'Pantalla de gestión de socios del SIS' } },
+  { title: 'ErrorLog',
+    tags: ['Apache Kafka', 'Ruby on Rails', 'React'],
+    description: 'Sistema de monitoreo de incidencias en tiempo de ejecución. Demostración de uso de Apache Kafka en observabilidad de sistemas basados en microservicios.', href: 'https://github.com/JeroAita/ErrorLog',
+    image: { src: '', alt: 'Panel de incidencias en tiempo de ejecución de ErrorLog' } },
+  { title: 'Portafolio',
+    tags: ['React', 'GitHub Actions'],
+    description: 'Sitio web personal. Construído con React + Vite, desplegado con Github Actions.', href: 'https://github.com/JeroAita/jeroaita.github.io',
+    image: { src: '', alt: 'Captura de la portada del sitio personal' } },
+  { title: 'Industrial Trace',
+    tags: ['Análisis funcional', 'Gestión de proyectos'],
+    description: '[En construcción.]', href: 'NULL',
+    image: { src: '', alt: '' } },
+  { title: 'Barbería GL',
+    tags: ['Análisis funcional', 'Gestión de proyectos'],
+    description: '[En construcción.]', href: 'NULL',
+    image: { src: '', alt: '' } },
+  /*
+  { title: '[Panel de sensores domóticos]', tags: ['React'], description: 'Dashboard en tiempo real para seguir consumo y temperatura del hogar, con alertas y gráficas históricas.', href: 'https://github.com/anabeltran/domotica-dashboard', image: { src: '', alt: '' } },
+  { title: '[CLI de backups incrementales]', tags: ['Go'], description: 'Herramienta de línea de comandos que comprime y sincroniza sólo los cambios, con verificación de integridad.', href: 'https://github.com/anabeltran/backup-cli', image: { src: '', alt: '' } },
+  { title: 'Arquitecturas hexagonales en la práctica', tags: ['Artículo'], description: 'Comparación de dos aplicaciones reales con y sin puertos y adaptadores, y qué cambió en los tests.', href: 'https://ejemplo.com/articulos/arquitectura-hexagonal', image: { src: '', alt: '' } },
+  { title: '[API de turnos para consultorios]', tags: ['Node.js'], description: 'API REST con autenticación, calendario y notificaciones por correo; desplegada con Docker Compose.', href: 'https://github.com/anabeltran/turnos-api', image: { src: '', alt: '' } },
+  { title: '[Buscador de fotos por similitud]', tags: ['TypeScript'], description: 'Indexa metadatos y embeddings para encontrar fotos parecidas; incluye pipeline de miniaturas.', href: 'https://github.com/anabeltran/photo-search', image: { src: '', alt: '' } },
+  { title: '[Estimación de esfuerzo con datos históricos]', tags: ['Artículo'], description: 'Cómo convertimos el registro de tareas terminadas en estimaciones más honestas para el equipo.', href: 'https://ejemplo.com/articulos/estimacion', image: { src: '', alt: '' } },
+  */
 ]
 
 export type Photo = { src: string; alt: string; title: string; camera: string; lens: string; aperture: string; shutter: string; iso: string }
