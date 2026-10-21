@@ -51,7 +51,7 @@ h3 { font-size: 18px; margin: 0 0 8px; }
 .slide { flex: 0 0 100%; scroll-snap-align: start; display: flex; justify-content: center; padding: 16px 8px; }
 .view.wide .slide { padding: 0 10px; }
 
-.hero { display: flex; gap: 64px; align-items: center; flex-wrap: wrap; padding-top: 72px; }
+.hero { display: flex; gap: 64px; align-items: center; flex-wrap: wrap; padding-top: 112px; padding-bottom: 40px; }
 .hero h1 { font-size: 56px; line-height: 1.05; margin: 0 0 20px; }
 .hero-copy { flex: 1; min-width: 300px; }
 .stack { position: relative; width: 340px; flex: none; margin: 12px 20px; }
@@ -62,13 +62,14 @@ h3 { font-size: 18px; margin: 0 0 8px; }
 .ci { flex: none; width: 34px; height: 34px; border-radius: 9px; display: flex; align-items: center; justify-content: center; background: linear-gradient(var(--g1), var(--g2)); border: 1px solid var(--line); box-shadow: 0 1px 0 var(--hi) inset, 0 1px 2px var(--sh); }
 .contact { display: flex; flex-direction: column; gap: 10px; margin-top: 28px; }
 .crow { display: flex; align-items: center; gap: 12px; color: var(--ink); text-decoration: none; font-size: 15px; }
+.crow:hover { filter: brightness(1.04); }
 .crow:hover span:last-child { text-decoration: underline; }
 .foot { margin-top: 96px; padding: 40px 48px; background: linear-gradient(var(--bar1), var(--bar2)); border-top: 1px solid var(--line); box-shadow: 0 1px 0 var(--hi) inset; scroll-margin-top: 72px; }
 .foot-in { max-width: 1120px; margin: 0 auto; display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; align-items: center; }
 
 @media (max-width: 720px) {
   .bar { padding: 10px 16px; } .sec { padding: 64px 16px 0; } .foot { padding: 32px 16px; }
-  .hero { gap: 32px; }
+  .hero { gap: 32px; padding-top: 88px; padding-bottom: 32px; }
   .hero h1 { font-size: 36px; }
   .hero-copy { min-width: 0; }
   .stack { width: min(340px, 100%); margin: 12px auto 0; }
@@ -102,7 +103,7 @@ h3 { font-size: 18px; margin: 0 0 8px; }
 .eval-m { display: none; align-items: center; justify-content: center; gap: 6px; margin-top: 20px; font-size: 13px; color: var(--mute); stroke: var(--mute); }
 .col { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; }
 .step { height: 56px; min-height: 56px; width: 100%; padding: 4px 10px; font-size: 15px; text-align: center; line-height: 1.2; }
-.bubble { position: relative; margin-top: 16px; padding: 14px; border-radius: 14px; font-size: 14px; color: var(--mute); background: linear-gradient(var(--card1), var(--card2)); border: 1px solid var(--line); box-shadow: 0 1px 0 var(--hi) inset, 0 2px 8px var(--sh); }
+.bubble { position: relative; margin-top: 16px; padding: 14px; border-radius: 14px; font-size: 14px; color: var(--mute); text-align: justify; background: linear-gradient(var(--card1), var(--card2)); border: 1px solid var(--line); box-shadow: 0 1px 0 var(--hi) inset, 0 2px 8px var(--sh); }
 .bubble::before { content: ""; position: absolute; top: -7px; left: 50%; margin-left: -6px; width: 12px; height: 12px; transform: rotate(45deg); background: var(--card1); border-left: 1px solid var(--line); border-top: 1px solid var(--line); }
 @media (max-width: 720px) {
   .flow { flex-direction: column; min-height: 0; } .col { width: 100%; } h2 { font-size: 28px; }

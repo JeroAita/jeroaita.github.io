@@ -1,13 +1,13 @@
 // Todo el contenido vive acá: agregar un proyecto o una foto = agregar un objeto.
 // Los datos de ejemplo se reemplazan por los reales antes de publicar.
 export const profile = {
-  name: 'Ana Beltrán',
-  tagline: 'Estudiante de Ingeniería en Sistemas de Información',
-  lead: 'Me interesa construir software que resuelva problemas de verdad y aprender a diseñarlo bien. Cuando no estoy programando, estoy afuera con mi cámara buscando luz.',
-  caption: 'Código de día, luz de tarde.',
-  email: 'ana.beltran@ejemplo.com',
-  github: 'anabeltran',
-  linkedin: 'anabeltran',
+  name: 'Jerónimo Aita',
+  tagline: 'Analista Funcional | Desarrollador de software | Estudiante de Ingeniería',
+  lead: 'Apasionado por los proyectos. Crítico de lo ya construído y explorador de oportunidades de mejora. Me interesa construir software bien diseñado que resuelva problemas de verdad. Cuando no estoy aprendiendo algo nuevo, estoy afuera con mi cámara.',
+  caption: '[Código de día, luz de tarde].',
+  email: 'jeroaitagm@gmail.com',
+  github: 'JeroAita',
+  linkedin: 'Jerónimo-Aita-b2625a1b8',
 }
 
 export const navItems = [
@@ -19,27 +19,27 @@ export const navItems = [
 ]
 
 export const sectionLeads = {
-  ingenieria: 'Cinco capas de conocimiento que se apoyan entre sí; elegí una para ver de qué se trata.',
-  metodologia: 'El ciclo que sigo en cada proyecto, de la idea al mantenimiento.',
+  ingenieria: 'Bases sólidas, más pensamiento crítico. Cinco capas de conocimiento que discretamente construyen una comprensión profunda de los sistemas de información.',
+  metodologia: 'De una idea a una solución informática, sosteniendo la robustez de las metodologías clásicas e incorporando lo mejor de las nuevas prácticas.',
 }
 
 // De arriba hacia abajo, como en la pirámide del mockup.
 export const levels = ['Sistemas', 'Gestión', 'Software', 'Infraestructura', 'Ingeniería'].map((name, i) => ({
   name,
   text: [
-    'Diseño de sistemas de información que se alineen con los objetivos del negocio y acompañan su evolución.',
-    'Planificación de recursos, tiempos y equipos para llevar cada proyecto a buen puerto.',
-    'Desarrollo de aplicaciones mantenibles, probadas y con una arquitectura pensada para crecer.',
-    'Redes, despliegues y automatización para que todo funcione de forma confiable y repetible.',
-    'La disciplina que integra las cuatro capas anteriores: resolver problemas reales con rigor técnico.',
+    'La integración de los conceptos: Comprender el negocio, modelar procesos, identificar oportunidades de mejora e información útil para la toma de decisiones. Diseñar sistemas que se alineen con los objetivos del negocio y acompañan su evolución.',
+    'La administración de proyectos: Contexto organizacional, planificación de recursos, tiempos y equipos para llevar cada proyecto a buen puerto.',
+    'La lógica: algoritmos y estructura de datos. Desde procesos en RAM y archivos, hasta microservicios interpretados en distintos lenguajes comunicados por APIs y bases de datos. Diseño de aplicaciones mantenibles, probadas y con una arquitectura pensada para crecer.',
+    'La plataforma física o primordial sobre la que viven los sistemas: hardware, sistemas operativos, redes, protocolos, virtualización, computación en la nube.',
+    'La solidez de las bases: ciencias aplicadas al modelado de problemas reales con rigor técnico. Matemática, análisis de señales, estadística, lógica y ciencias de la computación.',
   ][i],
 }))
 
 export const steps = [
-  { name: 'Análisis', text: 'Comprender el problema y los requisitos antes de escribir una sola línea: alcance, restricciones y criterios de éxito.' },
-  { name: 'Diseño', text: 'La solución debe funcionar primero en papel, ser coherente, mantenible y apropiada al negocio. Esto se logra aplicando buenas prácticas y patrones de diseño a nivel arquitectura y a nivel objetos.' },
-  { name: 'Desarrollo', text: 'Construir en incrementos pequeños y revisables, con pruebas automáticas y código versionado desde el primer día.' },
-  { name: 'Implementación y mantenimiento', text: 'Puesta en producción monitorizada, con despliegues repetibles y mejora continua según los datos de uso.' },
+  { name: 'Análisis', text: 'Relevar la situación, entrevistar a los stakeholders y comprender el problema. Traducir las necesidades del negocio en especificaciones técnicas: alcance, restricciones y criterios de éxito.' },
+  { name: 'Diseño', text: 'Modelar una solución que funciona en papel, es coherente, mantenible y apropiada al negocio. Aplicar buenas prácticas y patrones de diseño a nivel arquitectura y a nivel objetos.' },
+  { name: 'Desarrollo', text: 'Construir en incrementos pequeños y revisables código versionado desde el primer día. Desarrollar guiado por especificaciones y acelerado con agentes de IA.' },
+  { name: 'Implementación y mantenimiento', text: 'Garantizar el servicio llevando el sistema a producción de manera estructurada, con pruebas automáticas y despliegues controlados que permitan la mejora continua.' },
 ]
 
 export type Project = { title: string; tag: string; description: string; href: string; action: 'Código' | 'Leer' }

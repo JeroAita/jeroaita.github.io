@@ -19,7 +19,7 @@ export default function Portfolio() {
                 <p style={{ color: 'var(--mute)' }}>{p.description}</p>
                 <span className="chip">{p.tag}</span>
                 <div className="cta">
-                  <a className="btn main" href={p.href}>{p.action}</a>
+                  <a className="btn main" href={p.href} target="_blank" rel="noopener noreferrer">{p.action}</a>
                 </div>
               </article>
             ))}

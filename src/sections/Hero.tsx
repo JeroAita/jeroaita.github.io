@@ -12,8 +12,8 @@ const LinkedinIcon = () => (
 
 const rows = [
   { href: `mailto:${profile.email}`, text: profile.email, Icon: MailIcon },
-  { href: `https://github.com/${profile.github}`, text: `github.com/${profile.github}`, Icon: GithubIcon },
-  { href: `https://linkedin.com/in/${profile.linkedin}`, text: `linkedin.com/in/${profile.linkedin}`, Icon: LinkedinIcon },
+  { href: `https://github.com/${profile.github}`, text: `github.com/${profile.github}`, Icon: GithubIcon, external: true },
+  { href: `https://linkedin.com/in/${profile.linkedin}`, text: `linkedin.com/in/${profile.linkedin}`, Icon: LinkedinIcon, external: true },
 ]
 
 export default function Hero() {
@@ -27,8 +27,8 @@ export default function Hero() {
           <a className="btn main" href="#portafolio">Ver mis proyectos</a>
         </div>
         <div className="contact">
-          {rows.map(({ href, text, Icon }) => (
-            <a key={href} className="crow" href={href}>
+          {rows.map(({ href, text, Icon, external }) => (
+            <a key={href} className="crow" href={href} {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
               <span className="ci"><Icon /></span>
               <span>{text}</span>
             </a>
