@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { navItems, profile } from '../data/content'
+import { navItems, site } from '../data/content'
 import { useActiveSection } from '../hooks/useActiveSection'
 
 const ids = navItems.map((n) => n.id)
@@ -17,7 +17,10 @@ export default function Header() {
 
   return (
     <header className="bar">
-      <a className="logo" href="#inicio"><span className="mark">ab</span>{profile.name}</a>
+      <a className="logo" href="#inicio">
+        {site.logo ? <img className="mark-img" src={site.logo} alt="" /> : site.mark ? <span className="mark">{site.mark}</span> : null}
+        {site.name}
+      </a>
       <div className="tools">
         <nav id="nav" className={open ? 'nav open' : 'nav'} aria-label="Principal">
           {navItems.map((n) => (

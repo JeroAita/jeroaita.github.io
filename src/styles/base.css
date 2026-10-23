@@ -12,6 +12,7 @@ h3 { font-size: 18px; margin: 0 0 8px; }
 .bar { position: sticky; top: 0; z-index: 5; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 48px; background: linear-gradient(var(--bar1), var(--bar2)); border-bottom: 1px solid var(--line); box-shadow: 0 1px 0 var(--hi) inset, 0 2px 6px var(--sh); }
 .logo { display: flex; align-items: center; gap: 10px; font-family: var(--font-head); font-size: 18px; font-weight: 700; color: var(--ink); text-decoration: none; }
 .mark { width: 36px; height: 36px; border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 15px; color: var(--yt); background: linear-gradient(var(--y1), var(--y2)); border: 1px solid var(--yb); box-shadow: 0 1px 0 rgba(255,255,255,.7) inset, 0 1px 3px var(--sh); }
+.mark-img { width: 36px; height: 36px; border-radius: 9px; display: block; object-fit: contain; border: 1px solid var(--line); box-shadow: 0 1px 0 var(--hi) inset, 0 1px 3px var(--sh); background: #fff; }
 .nav { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
 
 .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 20px; border-radius: 10px; font-size: 14px; font-weight: 600; text-decoration: none; color: var(--ink); background: linear-gradient(var(--g1), var(--g2)); border: 1px solid var(--line); box-shadow: 0 1px 0 var(--hi) inset, 0 1px 2px var(--sh); cursor: pointer; }
@@ -39,7 +40,7 @@ h3 { font-size: 18px; margin: 0 0 8px; }
 /* Las imágenes ocupan la misma caja que el placeholder del mockup (que es content-box:
    alto declarado + 2×8 de padding + 2×1 de borde), así el swap placeholder → foto
    real no mueve el layout. */
-.shot { display: block; width: 100%; height: 158px; object-fit: cover; border-radius: 10px; margin-bottom: 16px; }
+.shot { display: block; width: 100%; height: 158px; object-fit: cover; border-radius: 10px; margin-bottom: 16px; border: 1px solid var(--line); }
 .hero-photo { display: block; width: 100%; height: 358px; object-fit: cover; border-radius: 10px; }
 
 /* Carrusel (scroll-snap) */
@@ -89,7 +90,8 @@ h3 { font-size: 18px; margin: 0 0 8px; }
 
 /* Secciones */
 .polaroid { position: relative; z-index: 1; margin: 0; background: var(--card1); border: 1px solid var(--line); border-radius: 6px; padding: 14px 14px 18px; box-shadow: 0 3px 12px var(--sh); }
-.pol { width: min(100%, 680px); margin: 0; background: linear-gradient(var(--card1), var(--card2)); border: 1px solid var(--line); border-radius: 6px; padding: 16px 16px 0; box-shadow: 0 1px 0 var(--hi) inset, 0 4px 14px var(--sh); }
+.pol { width: fit-content; max-width: 100%; margin: 0; background: linear-gradient(var(--card1), var(--card2)); border: 1px solid var(--line); border-radius: 6px; padding: 16px 16px 0; box-shadow: 0 1px 0 var(--hi) inset, 0 4px 14px var(--sh); align-self: flex-start; }
+.pol img { display: block; width: auto; height: auto; max-width: 100%; max-height: min(750px, 78vh); border-radius: 4px; }
 .pol .ph { height: 460px; }
 .params { padding: 16px 4px 20px; }
 .params b { font-family: var(--font-head); font-size: 15px; font-weight: 700; display: block; margin-bottom: 6px; }

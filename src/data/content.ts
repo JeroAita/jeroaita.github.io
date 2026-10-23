@@ -5,12 +5,29 @@
 // `src: ''` = sin imagen: se muestra el placeholder. Ver la sección "Imágenes" del README.
 export type ImageRef = { src: string; alt: string }
 
+export type SiteConfig = {
+  title: string
+  description: string
+  mark?: string
+  logo?: string
+  name: string
+  favicon?: string
+}
+
+export const site: SiteConfig = {
+  title: 'Jerónimo Aita · Portafolio',
+  description: 'Portafolio de Jerónimo Aita: ingeniería en sistemas, metodología, proyectos y fotografía.',
+  logo: '/images/icons/bush_logo.png',
+  name: 'Jerónimo Aita',
+  favicon: '/images/icons/bush_favicon_32.png'
+}
+
 export const profile = {
   name: 'Jerónimo Aita',
   tagline: 'Analista Funcional | Desarrollador de software | Estudiante de Ingeniería',
   lead: 'Apasionado por los proyectos. Crítico de lo ya construído y explorador de oportunidades de mejora. Me interesa construir software bien diseñado que resuelva problemas de verdad. Cuando no estoy aprendiendo algo nuevo, estoy afuera con mi cámara.',
-  caption: '[Código de día, luz de tarde].',
-  photo: { src: '', alt: 'Retrato de Jerónimo Aita' } as ImageRef,
+  caption: '',
+  photo: { src: '/images/sobre-mi/IMG_20260705_154702464.jpg', alt: 'Retrato de Jerónimo Aita' } as ImageRef,
   email: 'jeroaitagm@gmail.com',
   github: 'JeroAita',
   linkedin: 'Jerónimo-Aita-b2625a1b8',
@@ -70,18 +87,18 @@ export const steps = [
 
 export type Project = { title: string; tags: string[]; description: string; href: string; image: ImageRef }
 export const projects: Project[] = [
-  { title: 'SIS - Sistema Integrado de Socios',
-    tags: ['Django REST', 'React', 'MySQL'],
-    description: 'Base de sistema ERP para la gestión de socios, cuotas, eventos y staff de club social y deportivo. Demostración de desarrollo backend API REST + frontend React.', href: 'https://github.com/JeroAita/SIS-Sistema-Integrado-de-Socios',
-    image: { src: '', alt: 'Pantalla de gestión de socios del SIS' } },
   { title: 'ErrorLog',
     tags: ['Apache Kafka', 'Ruby on Rails', 'React'],
-    description: 'Sistema de monitoreo de incidencias en tiempo de ejecución. Demostración de uso de Apache Kafka en observabilidad de sistemas basados en microservicios.', href: 'https://github.com/JeroAita/ErrorLog',
-    image: { src: '', alt: 'Panel de incidencias en tiempo de ejecución de ErrorLog' } },
+    description: 'Demo: sistema de monitoreo de incidencias en tiempo de ejecución. Demostración de uso de Apache Kafka en observabilidad de sistemas basados en microservicios.', href: 'https://github.com/JeroAita/ErrorLog',
+    image: { src: '/images/portafolio/errorlog.jpg', alt: 'Logo de ErrorLog' } },
+  { title: 'SIS - Sistema Integrado de Socios',
+    tags: ['Django REST', 'React', 'MySQL'],
+    description: 'Base de sistema ERP para la gestión de socios, cuotas, eventos y staff de club social y deportivo. Demostración de desarrollo backend API REST con Python + frontend Javascript.', href: 'https://github.com/JeroAita/SIS-Sistema-Integrado-de-Socios',
+    image: { src: '/images/portafolio/sis.jpg', alt: 'Captura de pantalla de interfaz para gestión de cuotas de socios del SIS' } },
   { title: 'Portafolio',
     tags: ['React', 'GitHub Actions'],
-    description: 'Sitio web personal. Construído con React + Vite, desplegado con Github Actions.', href: 'https://github.com/JeroAita/jeroaita.github.io',
-    image: { src: '', alt: 'Captura de la portada del sitio personal' } },
+    description: 'La página aquí presente: un sitio web personal. Construído con React + Vite, desplegado con Github Actions.', href: 'https://github.com/JeroAita/jeroaita.github.io',
+    image: { src: '/images/portafolio/portafolio.jpg', alt: 'Logo de Portafolio' } },
   { title: 'Industrial Trace',
     tags: ['Análisis funcional', 'Gestión de proyectos'],
     description: '[En construcción.]', href: 'NULL',
@@ -102,7 +119,20 @@ export const projects: Project[] = [
 
 export type Photo = { src: string; alt: string; title: string; camera: string; lens: string; aperture: string; shutter: string; iso: string }
 export const photos: Photo[] = [
-  { src: '', alt: 'Atardecer sobre el puerto con grúas de carga al fondo', title: 'Grúas al atardecer', camera: 'Fujifilm X-T30', lens: '35 mm', aperture: 'ƒ/5.6', shutter: '1/250 s', iso: 'ISO 160' },
-  { src: '', alt: 'Calle mojada reflejando las luces de la noche', title: 'Luces sobre asfalto mojado', camera: 'Sony A6000', lens: '50 mm', aperture: 'ƒ/1.8', shutter: '1/60 s', iso: 'ISO 800' },
-  { src: '', alt: 'Textura de una pared de ladrillos cubierta de musgo', title: 'Muro viejo', camera: 'Canon EOS Rebel SL2', lens: '24 mm', aperture: 'ƒ/8', shutter: '1/125 s', iso: 'ISO 400' },
+  { src: '/images/fotografia/IMG_8956-therapee.jpg',
+    alt: 'Puente Zárate Brazo Largo', title: 'Vista del puente Zárate Brazo Largo al atardecer.',
+    camera: 'Canon PowersShot SX530 HS',
+    lens: '20 mm',
+    aperture: 'ƒ/5.3',
+    shutter: '1/120 s',
+    iso: 'ISO 200' },
+    { src: '/images/fotografia/IMG_1044-t.jpg',
+    alt: 'Estatua de patio', title: 'Estatua de patio.',
+    camera: 'Canon PowersShot SX530 HS',
+    lens: '27 mm',
+    aperture: 'ƒ/5.3',
+    shutter: '1/60 s',
+    iso: 'ISO 800' },
+  { src: '/images/fotografia/IMG_1112-t.jpg', alt: 'Calle mojada reflejando las luces de la noche', title: 'Luces sobre asfalto mojado', camera: 'Sony A6000', lens: '50 mm', aperture: 'ƒ/1.8', shutter: '1/60 s', iso: 'ISO 800' },
+  { src: '/images/fotografia/IMG_1485-t-r.jpg', alt: 'Textura de una pared de ladrillos cubierta de musgo', title: 'Muro viejo', camera: 'Canon EOS Rebel SL2', lens: '24 mm', aperture: 'ƒ/8', shutter: '1/125 s', iso: 'ISO 400' },
 ]

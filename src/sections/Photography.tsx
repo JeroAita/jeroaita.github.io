@@ -9,7 +9,7 @@ export default function Photography() {
       <Carousel label="Fotos">
         {photos.map((f) => (
           <figure className="pol" key={f.alt}>
-            {f.src ? <img src={f.src} alt={f.alt} loading="lazy" style={{ width: '100%', borderRadius: 4 }} /> : <div className="ph">{f.alt}</div>}
+            {f.src ? <img src={f.src} alt={f.alt} loading="lazy" /> : <div className="ph">{f.alt}</div>}
             <figcaption className="params">
               <b>{f.title}</b>
               {[f.camera, f.lens, f.aperture, f.shutter, f.iso].map((v) => <span key={v}>{v}</span>)}
