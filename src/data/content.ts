@@ -56,27 +56,52 @@ export const levels: Level[] = [
   {
     name: 'Sistemas',
     text: 'La integración de los conceptos: Comprender el negocio, modelar procesos, identificar oportunidades de mejora e información útil para la toma de decisiones. Diseñar sistemas que se alineen con los objetivos del negocio y acompañan su evolución.',
-    images: [],
+    images: [
+      '/images/ingenieria/sist_oportunidades.jpg',
+      '/images/ingenieria/sist_cu.jpg',
+      '/images/ingenieria/sist_arquitectura.jpg',
+      '/images/ingenieria/sist_bi.jpg',
+    ].map(src => ({ src, alt: 'Imagen de sistemas' })),
   },
   {
     name: 'Gestión',
     text: 'La administración de proyectos: Contexto organizacional, planificación de recursos, tiempos y equipos para llevar cada proyecto a buen puerto.',
-    images: [],
+    images: [
+      '/images/ingenieria/gest_gantt.jpg',
+      '/images/ingenieria/gest_teampology.jpg',
+      '/images/ingenieria/gest_sdlc.jpg',
+      '/images/ingenieria/gest_kanban.jpg',
+    ].map(src => ({ src, alt: 'Imagen de gestión' })),
   },
   {
     name: 'Software',
     text: 'La lógica: algoritmos y estructura de datos. Desde procesos en RAM y archivos, hasta microservicios interpretados en distintos lenguajes comunicados por APIs y bases de datos. Diseño de aplicaciones mantenibles, probadas y con una arquitectura pensada para crecer.',
-    images: [],
+    images: [
+      '/images/ingenieria/soft_diagramaflujo.jpg',
+      '/images/ingenieria/soft_codigo.jpg',
+      '/images/ingenieria/soft_lenguajes.jpg',
+      '/images/ingenieria/soft_diagramaer.jpg',
+    ].map(src => ({ src, alt: 'Imagen de software' })),
   },
   {
     name: 'Infraestructura',
     text: 'La plataforma física o primordial sobre la que viven los sistemas: hardware, sistemas operativos, redes, protocolos, virtualización, computación en la nube.',
-    images: [],
+    images: [
+      '/images/ingenieria/infr_transistores.jpg',
+      '/images/ingenieria/infr_paginado.jpg',
+      '/images/ingenieria/infr_red.jpg',
+      '/images/ingenieria/infr_mapared.jpg',
+    ].map(src => ({ src, alt: 'Imagen de infraestructura' })),
   },
   {
     name: 'Ingeniería',
     text: 'La solidez de las bases: ciencias aplicadas al modelado de problemas reales con rigor técnico. Matemática, análisis de señales, estadística, lógica y ciencias de la computación.',
-    images: [],
+    images: [
+      '/images/ingenieria/ing_afd.jpg',
+      '/images/ingenieria/ing_fourier.jpg',
+      '/images/ingenieria/ing_normales.jpg',
+      '/images/ingenieria/ing_derivada.jpg',
+    ].map(src => ({ src, alt: 'Imagen de ingeniería' })),
   },
 ]
 
