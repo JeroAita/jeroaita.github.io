@@ -106,9 +106,9 @@ h3 { font-size: 18px; margin: 0 0 8px; }
 
 /* Secciones */
 .polaroid { position: relative; z-index: 1; margin: 0; background: var(--card1); border: 1px solid var(--line); border-radius: 6px; padding: 14px 14px 18px; box-shadow: 0 3px 12px var(--sh); }
-.pol { width: fit-content; max-width: 100%; margin: 0; background: linear-gradient(var(--card1), var(--card2)); border: 1px solid var(--line); border-radius: 6px; padding: 16px 16px 0; box-shadow: 0 1px 0 var(--hi) inset, 0 4px 14px var(--sh); align-self: flex-start; }
-.pol img { display: block; width: auto; height: auto; max-width: 100%; max-height: min(750px, 78vh); border-radius: 4px; }
-.pol .ph { height: 460px; }
+.pol { width: fit-content; max-width: 100%; margin: 0 auto; background: linear-gradient(var(--card1), var(--card2)); border: 1px solid var(--line); border-radius: 6px; padding: 16px 16px 0; box-shadow: 0 1px 0 var(--hi) inset, 0 4px 14px var(--sh); align-self: center; }
+.pol img { display: block; width: auto; height: auto; max-width: 100%; max-height: min(525px, 54.6vh); border-radius: 4px; margin: 0 auto; }
+.pol .ph { height: 322px; }
 .params { padding: 16px 4px 20px; }
 .params b { font-family: var(--font-head); font-size: 15px; font-weight: 700; display: block; margin-bottom: 6px; }
 .params span { display: inline-block; font-size: 13px; color: var(--mute); margin-right: 14px; }
@@ -138,5 +138,5 @@ h3 { font-size: 18px; margin: 0 0 8px; }
   .eval { display: none; }
   .eval-m { display: flex; }
   .flow > svg { margin-top: 0; align-self: center; transform: rotate(90deg); }
-  .pol .ph { height: 340px; }
+  .pol .ph { height: 238px; }
 }
