@@ -44,6 +44,8 @@ export const navItems = [
 export const sectionLeads = {
   ingenieria: 'Bases sólidas, más pensamiento crítico. Cinco capas de conocimiento que discretamente construyen una comprensión profunda de los sistemas de información.',
   metodologia: 'De una idea a una solución informática, sosteniendo la robustez de las metodologías clásicas e incorporando lo mejor de las nuevas prácticas.',
+  portafolio: 'Mis proyectos destacados.',
+  fotografia: 'Mis fotos favoritas.',
 }
 
 // De arriba hacia abajo, como en la pirámide del mockup.

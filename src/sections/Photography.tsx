@@ -1,11 +1,11 @@
 import Carousel from '../components/Carousel'
-import { photos } from '../data/content'
+import { photos, sectionLeads } from '../data/content'
 
 export default function Photography() {
   return (
     <section id="fotografia" className="sec">
       <h2>Fotografía</h2>
-      <p className="lead">Mis fotos favoritas.</p>
+      <p className="lead">{sectionLeads.fotografia}</p>
       <Carousel label="Fotos">
         {photos.map((f) => (
           <figure className="pol" key={f.alt}>
