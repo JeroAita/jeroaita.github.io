@@ -25,7 +25,7 @@ export const site: SiteConfig = {
 export const profile = {
   name: 'Jerónimo Aita',
   tagline: 'Analista Funcional | Desarrollador de software | Estudiante de Ingeniería',
-  lead: 'Apasionado por los proyectos. Crítico de lo ya construído y explorador de oportunidades de mejora. Me interesa construir software bien diseñado que resuelva problemas de verdad. Cuando no estoy aprendiendo algo nuevo, estoy afuera con mi cámara.',
+  lead: 'Me gusta entender un proceso a fondo antes de proponer cómo mejorarlo, y dejar la solución escrita antes de escribir el código. Vengo del mundo industrial y del software de salud, y estudio Ingeniería en Sistemas en la UTN. Cuando no estoy frente a la pantalla, estoy con mi cámara. Si tenés un proyecto en mente, escribime.',
   caption: '',
   photo: { src: '/images/sobre-mi/IMG_20260705_154702464.jpg', alt: 'Retrato de Jerónimo Aita' } as ImageRef,
   email: 'jeroaitagm@gmail.com',
@@ -44,7 +44,7 @@ export const navItems = [
 export const sectionLeads = {
   ingenieria: 'Bases sólidas más pensamiento crítico. Cinco capas de conocimiento que construyen una comprensión profunda de los sistemas de información.',
   metodologia: 'De una idea a una solución informática, sosteniendo la robustez de las metodologías clásicas e incorporando lo mejor de las nuevas prácticas.',
-  portafolio: 'Una colección de proyectos propios o en los que participé, desde el análisis de requerimientos hasta la implementación de funcionalidades..',
+  portafolio: 'Una colección de proyectos propios o en los que participé, desde el análisis de requerimientos hasta la implementación de funcionalidades.',
   fotografia: 'Una pequeña galería con mis fotos favoritas.',
 }
 
@@ -112,29 +112,45 @@ export const steps = [
   { name: 'Implementación y mantenimiento', text: 'Garantizar el servicio llevando el sistema a producción de manera estructurada, con pruebas automáticas y despliegues controlados que permitan la mejora continua.' },
 ]
 
-export type Project = { title: string; tags: string[]; description: string; href: string; image: ImageRef }
+export type Project = {
+  title: string
+  category: string
+  tags: string[]
+  description: string
+  detail?: string
+  href: string
+  image: ImageRef
+}
 export const projects: Project[] = [
   { title: 'ErrorLog',
+    category: 'Personal',
     tags: ['Apache Kafka', 'Ruby on Rails', 'React'],
     description: 'Desarrollé de principio a fin una demo de capa de monitoreo de incidencias en tiempo de ejecución basado en Apache Kafka para sistemas basados en microservicios.',
+    detail: 'ErrorLog es una demo de una capa de monitoreo de incidencias pensada para sistemas basados en microservicios. Implementé el flujo completo: los servicios publican eventos en Apache Kafka, un backend en Ruby on Rails los procesa y persiste, y una interfaz en React permite consultar y seguir las incidencias en tiempo real. El proyecto me permitió practicar el diseño de un pipeline de eventos de punta a punta.',
     href: 'https://github.com/JeroAita/ErrorLog',
     image: { src: '/images/portafolio/errorlog.jpg', alt: 'Logo de ErrorLog' } },
   { title: 'Sistema Integrado de Socios',
+    category: 'Académico',
     tags: ['Python', 'Django REST', 'MySQL'],
     description: 'Diseñé y desarrollé el backend API REST de un sistema ERP para la gestión de socios, cuotas, eventos y staff de clubes sociales y deportivos.',
+    detail: 'El Sistema Integrado de Socios es un ERP para clubes sociales y deportivos. Mi trabajo se centró en el backend: modelado del dominio, diseño de la API REST con Django REST Framework y persistencia en MySQL, cubriendo la gestión de socios, cuotas, eventos y staff. El proyecto fue desarrollado en equipo como parte de la carrera, con foco en requerimientos, diseño de datos y mantenibilidad.',
     href: 'https://github.com/JeroAita/SIS-Sistema-Integrado-de-Socios',
     image: { src: '/images/portafolio/sis.jpg', alt: 'Captura de pantalla de interfaz para gestión de cuotas de socios del SIS' } },
   { title: 'Portafolio',
+    category: 'Personal',
     tags: ['Typescript', 'React', 'GitHub Actions'],
     description: 'Construí mi sitio web personal. Desarrollado con Typescript + React + Vite, desplegado con Github Pages.',
+    detail: 'Este mismo sitio: un portafolio personal construido con TypeScript, React y Vite. Incluye contenido centralizado en un único archivo de datos, estilos propios con modo claro y oscuro automático, carruseles accesibles y un flujo de despliegue automatizado con GitHub Actions hacia GitHub Pages.',
     href: 'https://github.com/JeroAita/jeroaita.github.io',
     image: { src: '/images/portafolio/portafolio.jpg', alt: 'Logo de Portafolio' } },
   { title: 'Industrial Trace',
+    category: 'Profesional',
     tags: ['Análisis funcional', 'Gestión de proyectos'],
     description: '[En construcción.]',
     href: '',
     image: { src: '', alt: '' } },
   { title: 'CRM Barbería',
+    category: 'Profesional',
     tags: ['Análisis funcional', 'Gestión de proyectos'],
     description: '[En construcción.]',
     href: '',
