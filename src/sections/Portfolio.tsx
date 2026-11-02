@@ -6,19 +6,32 @@ import { projects, sectionLeads, type Project } from '../data/content'
 const PER_PAGE = 3
 const pages = Array.from({ length: Math.ceil(projects.length / PER_PAGE) }, (_, i) => projects.slice(i * PER_PAGE, i * PER_PAGE + PER_PAGE))
 
+const ExternalIcon = () => (
+  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M6 3H3.5A1.5 1.5 0 0 0 2 4.5v8A1.5 1.5 0 0 0 3.5 14h8A1.5 1.5 0 0 0 13 12.5V10" />
+    <path d="M9 2h5v5" />
+    <path d="M14 2 7.5 8.5" />
+  </svg>
+)
+
 const ProjectCard = ({ p, onOpen }: { p: Project; onOpen: (p: Project) => void }) => (
   <article className="card">
+    {p.category && <span className="badge">{p.category}</span>}
     {p.image.src
       ? <img className="shot" src={p.image.src} alt={p.image.alt} loading="lazy" />
       : <div className="ph" style={{ height: 140, marginBottom: 16 }}>[Captura]</div>}
-    {p.category && <span className="badge">{p.category}</span>}
     <h3>{p.title}</h3>
     <p className="desc" style={{ color: 'var(--mute)' }}>{p.description}</p>
     <div className="tags">
       {p.tags.map((t) => <span className="chip" key={t}>{t}</span>)}
     </div>
     <div className="cta">
-      {p.href && <a className="btn" href={p.href} target="_blank" rel="noopener noreferrer">Enlace</a>}
+      {p.href && (
+        <a className="btn" href={p.href} target="_blank" rel="noopener noreferrer">
+          Ver código
+          <ExternalIcon />
+        </a>
+      )}
       <button type="button" className="btn main" aria-haspopup="dialog" onClick={() => onOpen(p)}>Ver más</button>
     </div>
   </article>

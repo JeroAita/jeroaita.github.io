@@ -22,17 +22,21 @@ export default function Hero() {
       <div className="hero-copy">
         <p className="eyebrow">{profile.tagline}</p>
         <h1>{profile.name}</h1>
-        <p className="lead" style={{ margin: '0 0 28px' }}>{profile.lead}</p>
-        <div className="row" style={{ marginTop: 0 }}>
-          <a className="btn main" href="#portafolio">Ver mis proyectos</a>
-        </div>
-        <div className="contact">
-          {rows.map(({ href, text, Icon, external }) => (
-            <a key={href} className="crow" href={href} {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
-              <span className="ci"><Icon /></span>
-              <span>{text}</span>
-            </a>
+        <div className="hero-intro">
+          {profile.lead.map((paragraph, i) => (
+            <p className="lead" key={i}>{paragraph}</p>
           ))}
+          <div className="row">
+            <a className="btn main" href="#portafolio">Ver mis proyectos</a>
+          </div>
+          <div className="contact">
+            {rows.map(({ href, text, Icon, external }) => (
+              <a key={href} className="crow" href={href} {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
+                <span className="ci"><Icon /></span>
+                <span>{text}</span>
+              </a>
+            ))}
+          </div>
         </div>
       </div>
       <div className="stack">

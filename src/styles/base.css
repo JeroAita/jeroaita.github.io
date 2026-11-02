@@ -15,7 +15,8 @@ h3 { font-size: 18px; margin: 0 0 8px; }
 .mark-img { width: 36px; height: 36px; border-radius: 9px; display: block; object-fit: contain; border: 1px solid var(--line); box-shadow: 0 1px 3px var(--sh); }
 .nav { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
 
-.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 20px; border-radius: 10px; font-size: 14px; font-weight: 600; text-decoration: none; color: var(--ink); background: linear-gradient(var(--g1), var(--g2)); border: 1px solid var(--line); box-shadow: 0 1px 0 var(--hi) inset, 0 1px 2px var(--sh); cursor: pointer; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 44px; padding: 0 20px; border-radius: 10px; font-size: 14px; font-weight: 600; text-decoration: none; color: var(--ink); background: linear-gradient(var(--g1), var(--g2)); border: 1px solid var(--line); box-shadow: 0 1px 0 var(--hi) inset, 0 1px 2px var(--sh); cursor: pointer; }
+.btn svg { flex: none; }
 .btn:hover { filter: brightness(1.04); }
 .btn.nav-i { min-height: 40px; padding: 0 14px; background: transparent; border-color: transparent; box-shadow: none; }
 .btn.nav-i:hover, .btn.nav-i[aria-current="true"] { background: linear-gradient(var(--g1), var(--g2)); border-color: var(--line); }
@@ -43,7 +44,7 @@ h3 { font-size: 18px; margin: 0 0 8px; }
 .cta { display: flex; align-items: center; gap: 10px; justify-content: flex-end; margin-top: auto; padding-top: 8px; }
 .cta .btn:not(.main) { margin-right: auto; }
 .chip { display: inline-block; padding: 4px 12px; border-radius: 99px; font-size: 13px; background: var(--bg2); border: 1px solid var(--line); box-shadow: 0 1px 2px var(--sh) inset; margin: 0 6px 8px 0; }
-.badge { display: flex; width: fit-content; align-items: center; align-self: center; padding: 3px 10px; border-radius: 99px; font-family: var(--font-head); font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--yt); background: linear-gradient(var(--y1), var(--y2)); border: 1px solid var(--yb); box-shadow: 0 1px 0 rgba(255,255,255,.7) inset; margin: 0 auto 10px; }
+.badge { display: flex; width: fit-content; align-items: center; margin: 0 auto 8px; font-family: var(--font-head); font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--mute); }
 .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
 .tags .chip { margin: 0; }
 .ph { box-sizing: content-box; border-radius: 10px; border: 1px solid var(--line); background: linear-gradient(135deg, var(--g1), var(--g2)); display: flex; align-items: center; justify-content: center; color: var(--mute); font-size: 13px; text-align: center; padding: 8px; box-shadow: 0 1px 3px var(--sh) inset; }
@@ -57,14 +58,15 @@ h3 { font-size: 18px; margin: 0 0 8px; }
 .project-modal { width: min(640px, calc(100vw - 32px)); max-height: calc(100vh - 32px); overflow: auto; padding: 24px; border: 1px solid var(--line); border-radius: 14px; background: linear-gradient(var(--card1), var(--card2)); color: var(--ink); box-shadow: 0 2px 8px var(--sh); }
 .project-modal::backdrop { background: rgba(0,0,0,.55); }
 .project-modal h2 { margin: 0; }
-.project-modal .shot { height: auto; aspect-ratio: 583 / 150; max-height: none; object-fit: cover; object-position: center; }
+.project-modal .shot { width: calc(100% - 96px); height: auto; aspect-ratio: 583 / 300; max-height: none; object-fit: contain; object-position: center; margin: 0 auto 16px; }
 .project-modal .desc { color: var(--mute); margin: 0 0 20px; }
 .modal-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 0 0 16px; }
-.modal-ph { aspect-ratio: 583 / 150; height: auto; margin-bottom: 16px; }
+.modal-ph { width: calc(100% - 96px); aspect-ratio: 583 / 300; height: auto; margin: 0 auto 16px; }
 .modal-close { display: flex; flex: none; align-items: center; justify-content: center; width: 36px; height: 36px; padding: 0; color: var(--ink); background: linear-gradient(var(--g1), var(--g2)); border: 1px solid var(--line); border-radius: 10px; box-shadow: 0 1px 0 var(--hi) inset, 0 1px 2px var(--sh); cursor: pointer; }
 .modal-close:hover { filter: brightness(1.04); }
-.modal-actions { display: flex; justify-content: center; }
-.modal-actions .btn { min-width: 120px; }
+.modal-sections { display: flex; flex-direction: column; gap: 16px; }
+.modal-section strong { display: block; margin: 0 0 4px; font-weight: 700; }
+.modal-section .desc { margin: 0; }
 
 /* Carrusel (scroll-snap) */
 .view { overflow: hidden; padding: 6px 8px 18px; margin: -6px -8px 0; }
@@ -85,6 +87,11 @@ h3 { font-size: 18px; margin: 0 0 8px; }
 .hero { display: flex; gap: 64px; align-items: center; flex-wrap: wrap; padding-top: 112px; padding-bottom: 40px; }
 .hero h1 { font-size: 56px; line-height: 1.05; margin: 0 0 20px; }
 .hero-copy { flex: 1; min-width: 300px; }
+.hero-intro { max-width: 640px; }
+.hero-intro .lead { margin: 0 0 16px; }
+.hero-intro .lead:last-of-type { margin-bottom: 28px; }
+.hero-intro .row { margin-top: 0; justify-content: center; }
+.hero-intro .contact { align-items: center; }
 .stack { position: relative; width: 340px; flex: none; margin: 12px 20px; }
 .stack::before, .stack::after { content: ""; position: absolute; inset: 0; border-radius: 6px; background: var(--card1); border: 1px solid var(--line); box-shadow: 0 2px 8px var(--sh); }
 .stack::before { transform: rotate(-5deg); }
@@ -120,6 +127,7 @@ h3 { font-size: 18px; margin: 0 0 8px; }
   .nav.open { display: flex; }
   .nav .btn.nav-i { width: 100%; justify-content: flex-start; min-height: 44px; }
   .project-modal { width: calc(100vw - 24px); padding: 20px; }
+  .project-modal .shot, .project-modal .modal-ph { width: calc(100% - 24px); }
   .cta { flex-wrap: wrap; }
 }
 

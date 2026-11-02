@@ -49,11 +49,17 @@ export default function ProjectModal({ project, onClose }: Props) {
           {project.image.src
             ? <img className="shot modal-shot" src={project.image.src} alt={project.image.alt} />
             : <div className="ph modal-ph">[Captura]</div>}
-          <p className="desc">{project.detail?.trim() || project.description}</p>
-          {project.href && (
-            <div className="modal-actions">
-              <a className="btn main" href={project.href} target="_blank" rel="noopener noreferrer">Enlace</a>
+          {project.sections?.length ? (
+            <div className="modal-sections">
+              {project.sections.map((section) => (
+                <div className="modal-section" key={section.title}>
+                  <strong>{section.title}</strong>
+                  <p className="desc">{section.text}</p>
+                </div>
+              ))}
             </div>
+          ) : (
+            <p className="desc">{project.description}</p>
           )}
         </>
       )}
