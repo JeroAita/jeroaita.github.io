@@ -29,13 +29,13 @@ export const profile = {
   tagline: 'Analista Funcional | Desarrollador de software | Estudiante de Ingeniería',
   lead: [
     'Me gusta entender un proceso a fondo antes de proponer cómo mejorarlo, y dejar la solución escrita antes de escribir el código. Vengo del mundo industrial y del software de salud, y estudio Ingeniería en Sistemas en la UTN.',
-    'Cuando no estoy frente a la pantalla, estoy paseando con mi cámara capturando paisajes, aves, y lo que encuentre interesante. Si tenés un proyecto en mente, escribime.',
+    'Cuando no estoy frente a la pantalla, estoy paseando con mi cámara capturando paisajes, aves, y lo que encuentre interesante. Si tenés un proyecto en mente, ¡Escribime!',
   ],
   caption: '',
   photo: { src: '/images/sobre-mi/IMG_20260705_154702464.jpg', alt: 'Retrato de Jerónimo Aita' } as ImageRef,
   email: 'jeroaitagm@gmail.com',
   github: 'JeroAita',
-  linkedin: 'Jerónimo-Aita-b2625a1b8',
+  linkedin: 'Jeronimo-Aita-b2625a1b8',
 }
 
 export const navItems = [
@@ -130,31 +130,45 @@ export const projects: Project[] = [
   { title: 'ErrorLog',
     category: 'Académico',
     tags: ['Apache Kafka', 'Ruby on Rails', 'React'],
-    description: 'Desarrollé de principio a fin una demo de sistema de monitoreo de incidencias en tiempo de ejecución basado en Apache Kafka para sistemas distribuídos o basados en microservicios.',
+    description: 'Desarrollé de principio a fin una demo de observabilidad de incidencias en tiempo real para sistemas distribuidos y de microservicios, basada en Apache Kafka.',
     sections: [
-      { title: 'Contexto', text: 'En sistemas distribuidos, los errores pueden ser difíciles de rastrear y resolver. Cada apliación o servicio en la nube posee su propio conjunto de logs. La falta de visibilidad en tiempo real puede llevar a bugs incomprensibles, equipos de desarrolladores perdidos y tiempos de resolución prolongados.' },
-      { title: 'Análisis', text: 'Entrevistando desarrolladores, identifiqué las necesidades de los equipos para gestionar la resolución de incidencias: tipos de incidencias, fragmentos útiles de logs, instancia del servicio, estado de trabajo sobre la incidencia.' },
-      { title: 'Solución', text: 'Diseñé la arquitectura del sistema utilizando Apache Kafka para la transmisión de eventos, un backend en Ruby on Rails para el procesamiento y almacenamiento, y una interfaz en React para la visualización. Se definieron endpoints RESTful y se implementaron patrones de diseño para asegurar la escalabilidad y mantenibilidad del sistema, y una interfaz intuitiva que permita filtrar y priorizar incidencias.' },
-      { title: 'Resultado', text: 'Una demo de un servicio de observabilidad de incidencias pensada para sistemas distribuídos. Implementé el flujo completo: los servicios publican eventos en Apache Kafka, un backend en Ruby on Rails los procesa y persiste, y una interfaz en React permite consultar y seguir las incidencias en tiempo real.' },
-      { title: 'Conclusión', text: 'El proyecto me permitió practicar el análisis de requerimientos y el diseño de un pipeline de eventos de punta a punta, desde la captura de logs hasta la visualización de incidencias. Aprendí a integrar tecnologías modernas y a aplicar buenas prácticas de desarrollo en un contexto de microservicios.' }
+      { title: 'Contexto', text: 'En un sistema distribuido, cada servicio genera sus propios logs y rastrear un error a través de varios servicios es lento. Sin una vista centralizada y en tiempo real, los equipos tardan más en entender qué falló, dónde y quién se está ocupando.' },
+      // TODO: indicar a cuántos desarrolladores entrevistaste (o si fueron conversaciones informales) y ajustar el verbo.
+      { title: 'Análisis', text: 'Entrevisté a desarrolladores para entender cómo gestionan hoy las incidencias. De ahí salió lo que el sistema tenía que mostrar: tipo de incidencia, fragmentos útiles del log, instancia del servicio que la originó y estado de trabajo sobre ella.' },
+      // TODO: sumar una frase sobre por qué elegiste Apache Kafka (decisión de diseño). Si implementaste patrones de diseño concretos, nombrarlos.
+      { title: 'Solución', text: 'Los servicios publican eventos en Apache Kafka; un backend en Ruby on Rails los procesa y los almacena; y una interfaz en React permite consultar las incidencias en tiempo real, filtrarlas y priorizarlas. Definí endpoints RESTful para exponer los datos a la interfaz.' },
+      { title: 'Resultado', text: 'Un flujo completo de punta a punta: los eventos se publican, se procesan, se persisten y se ven en la interfaz en tiempo real. Es una demo: su alcance es mostrar la arquitectura y el flujo, no ser un producto listo para producción.' },
+      { title: 'Mi aporte', text: 'Fue un proyecto individual: hice el relevamiento, el diseño de la arquitectura, el backend y la interfaz. Me permitió practicar el ciclo completo, desde el análisis de requerimientos hasta un pipeline de eventos funcionando.' }
     ],
     href: 'https://github.com/JeroAita/ErrorLog',
     image: { src: '/images/portafolio/errorlog.jpg', alt: 'Logo de ErrorLog' }
   },
   { title: 'Sistema Integrado de Socios',
     category: 'Académico',
-    tags: ['Python', 'Django REST', 'MySQL'],
-    description: 'Diseñé y desarrollé el backend API REST de un sistema ERP para la gestión de socios, cuotas, eventos y staff de clubes sociales y deportivos.',
-    sections: [{ title: 'Descripción', text: 'El Sistema Integrado de Socios es un ERP para clubes sociales y deportivos. Mi trabajo se centró en el backend: modelado del dominio, diseño de la API REST con Django REST Framework y persistencia en MySQL, cubriendo la gestión de socios, cuotas, eventos y staff. El proyecto fue desarrollado en equipo como parte de la carrera, con foco en requerimientos, diseño de datos y mantenibilidad.' }],
+    tags: ['Python', 'Django REST', 'MySQL', 'Docker'],
+    description: 'Diseñé y desarrollé el backend API REST de una demo de sistema ERP para la gestión de socios, cuotas, eventos y staff de clubes sociales y deportivos.',
+    sections: [
+      { title: 'Contexto', text: 'Un club social o deportivo maneja información muy variada: quiénes son sus socios, si pagaron la cuota, a qué clases o eventos están inscriptos y cuánto cobran los profesores o directores de eventos. Además necesita avisar a sus socios (suspensión de clases, cancelación de eventos) y poder identificarlos y ver el estado de su cuota en la portería o en otros puntos de las instalaciones.' },
+      // TODO: indicar cómo fue el relevamiento (¿hablaron con un club real? ¿con quién?) y el tamaño del equipo.
+      { title: 'Análisis', text: 'En equipo hicimos un proceso de relevamiento y, a partir de él, definimos las necesidades de información de estos clubes.' },
+      { title: 'Solución', text: 'En equipo diseñamos un sistema web con arquitectura de tres capas, pensado para que fuera sencillo de desplegar y mantener: en el club basta con abrir un navegador e iniciar sesión.' },
+      // TODO: sumar una captura o la lista de módulos que quedaron funcionando.
+      { title: 'Resultado', text: 'SIS: una demo de sistema ERP para clubes sociales y deportivos, con la que los administradores pueden operar y comunicarse con sus socios.' },
+      { title: 'Mi aporte', text: 'Me ocupé del backend: modelé el dominio, diseñé la API REST con Django REST Framework, implementé la autenticación con JWT, la persistencia en MySQL y la ejecución en contenedores con Docker.' },
+    ],
     href: 'https://github.com/JeroAita/SIS-Sistema-Integrado-de-Socios',
-    image: { src: '/images/portafolio/sis.jpg', alt: 'Captura de pantalla de interfaz para gestión de cuotas de socios del SIS' } },
+    image: { src: '/images/portafolio/sis.jpg', alt: 'Captura de pantalla de interfaz para gestión de cuotas de socios del SIS' }
+   },
   { title: 'Portafolio',
     category: 'Personal',
-    tags: ['Typescript', 'React', 'GitHub Actions'],
-    description: 'Construí mi sitio web personal. Desarrollado con Typescript + React + Vite, desplegado con Github Pages.',
-    sections: [{ title: 'Descripción', text: 'Este mismo sitio: un portafolio personal construido con TypeScript, React y Vite. Incluye contenido centralizado en un único archivo de datos, estilos propios con modo claro y oscuro automático, carruseles accesibles y un flujo de despliegue automatizado con GitHub Actions hacia GitHub Pages.' }],
+    tags: ['TypeScript', 'React', 'Vite', 'GitHub Actions'],
+    description: 'Construí mi sitio web personal con TypeScript, React y Vite, y lo desplegué en GitHub Pages con GitHub Actions.',
+    sections: [
+      { title: 'Objetivo', text: 'Tener un lugar propio donde presentar mi perfil profesional y mis proyectos.' },
+      { title: 'Diseño', text: 'Es este mismo sitio. Todo el contenido vive en un único archivo de datos, así que agregar un proyecto no requiere tocar los componentes. Tiene estilos propios con modo claro y oscuro automático, carruseles accesibles y un flujo de despliegue automatizado: cada cambio se publica en GitHub Pages mediante GitHub Actions.' }
+    ],
     href: 'https://github.com/JeroAita/jeroaita.github.io',
-    image: { src: '/images/portafolio/portafolio.jpg', alt: 'Logo de Portafolio' } },
+    image: { src: '/images/portafolio/portafolio.jpg', alt: 'Captura de pantalla de la página de inicio del portafolio' } },
   { title: 'Industrial Trace',
     category: 'Profesional',
     tags: ['Análisis funcional', 'Gestión de proyectos'],

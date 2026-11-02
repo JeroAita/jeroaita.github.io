@@ -91,7 +91,7 @@ h3 { font-size: 18px; margin: 0 0 8px; }
 .hero-intro .lead { margin: 0 0 16px; }
 .hero-intro .lead:last-of-type { margin-bottom: 28px; }
 .hero-intro .row { margin-top: 0; justify-content: center; }
-.hero-intro .contact { align-items: center; }
+.hero-intro .contact { align-items: flex-start; width: fit-content; margin-inline: auto; }
 .stack { position: relative; width: 340px; flex: none; margin: 12px 20px; }
 .stack::before, .stack::after { content: ""; position: absolute; inset: 0; border-radius: 6px; background: var(--card1); border: 1px solid var(--line); box-shadow: 0 2px 8px var(--sh); }
 .stack::before { transform: rotate(-5deg); }
